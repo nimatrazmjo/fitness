@@ -1,0 +1,21 @@
+{
+  "name": "fitness",
+  "description": "Web based fitness database uing NodeJS+MongoDB+AngularJS",
+  "main": "index.js",
+  "authors": [
+    "Nimatullah Razmjo <nimatullah.razmjo@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6"
+  }
+}
