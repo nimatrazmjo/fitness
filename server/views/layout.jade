@@ -4,21 +4,23 @@ html
         link(href="/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
         link(href="/css/fitness.css", rel="stylesheet")
     body
-        .container
-            h1
-                a(href="") Fitness website
-            .navbar
-                .navbar-inner
-                    .container
-                        ul.nav
-                            li(class="active")
-                                a(href="#") Home
-                            li
-                                a(href="#") Contact Us
-                            li
-                                a(href="#") About Us
+        .container-fluid
+            header.navbar.navbar-inverse.navbar-fixed-top
+                .navbar-header
+                    a.navbar-brand(href="/") Fitness Records
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/", class="active") Home
+                        li
+                            a(href="/") About Us
+                        li
+                            a(href="/") Contact Us
+                        li
+                            a(href="/") Your Plan
+            aside
 
-
-
+            footer.text-center
+                p &copy; 2016 Nimatullah Razmjo.
         include script
 
