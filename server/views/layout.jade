@@ -4,45 +4,49 @@ html
         link(href="/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
         link(href="/css/fitness.css", rel="stylesheet")
     body
-        header.navbar.navbar-inverse.navbar-fixed-top
-                .navbar-header
-                    a.navbar-brand(href="/") Fitness Records
-                .navbar-collapse.collapse
-                    ul.nav.navbar-nav
-                        li
-                            a(href="/", class="active") Home
-                        li
-                            a(href="/") About Us
-                        li
-                            a(href="/") Contact Us
-                        li
-                            a(href="/") Your Plan
-            aside.col-sm-2#left_side
-                .profile-sidebar
-                    .profile-userpic
-                        img(src="images/profiles.jpg",class="img img-responsive")
+        header.navbar.navbar-inverse.navbar-fixed-top.col-sm-12
+            .navbar-header
+                button.navbar-toggle(data-toggle="collapse", data-target="#menu_linkss")
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="/") Fitness Records
+            .navbar-collapse.collapse#menu_linkss
+                ul.nav.navbar-nav
+                    li
+                        a(href="/", class="active") Home
+                    li
+                        a(href="/") About Us
+                    li
+                        a(href="/") Contact Us
+                    li
+                        a(href="/") Your Plan
+        aside.col-sm-2#left_side
+            .profile-sidebar
+                .profile-userpic
+                    img(src="images/profiles.jpg",class="img img-responsive")
 
-                    .profile-usertitle
-                        .profile-usertitle-name Nimatullah Razmjo
-                        .profile-usertitle-job Software Developer
-                    .profile-userbuttons
-                        button.btn.btn-success.btn-sm Follow
-                        button.btn.btn-danger.btn-sm Message
-                    .profile-usermenu
-                        ul.nav
-                            li
-                                a(href="#home") Overview
-                                    i(class="glyphicon glyphicon-home")
-                            li
-                                a(href="#home") Account Settings
-                                    i(class="glyphicon glyphicon-user")
-                            li
-                                a(href="#home") Logout
-                                    i(class="glyphicon glyphicon-log-out")
+                .profile-usertitle
+                    .profile-usertitle-name Nimatullah Razmjo
+                    .profile-usertitle-job Software Developer
+                .profile-userbuttons
+                    button.btn.btn-success.btn-sm Follow
+                    button.btn.btn-danger.btn-sm Message
+                .profile-usermenu
+                    ul.nav
+                        li
+                            a(href="#home") Overview
+                                i(class="glyphicon glyphicon-home")
+                        li
+                            a(href="#home") Account Settings
+                                i(class="glyphicon glyphicon-user")
+                        li
+                            a(href="#home") Logout
+                                i(class="glyphicon glyphicon-log-out")
 
         section.col-sm-10#content
-                p  I am in here in viewnfsd
-                    | fasfjsakfjsafs
+                block content
 
             footer.text-center.col-xs-12
                 p &copy; 2016 Nimatullah Razmjo.
