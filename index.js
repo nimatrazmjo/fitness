@@ -4,35 +4,22 @@
  * @type {*|exports}
  */
 
-var
-    http = require('http'),
-    express = require('express'),
+var express = require('express'),
     app = express(),
-    bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    stylus = require('stylus'),
     port = 2000;
 
-/* basic configuration */
-app.set('views',__dirname+'/server/views');
-app.set('view engine','jade');
-//---set basic routing for static files
-app.use(express.static(__dirname+'/public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+/*** Configuration files ***/
+require('./server/config/config.js')(app, express);
 
-function compile(str, path) {
-    return stylus(str).set('filename', path);
-}
-app.use(stylus.middleware({
-    src: __dirname+'/public',
-    compile : compile
-}));
+/*** Connect to database*/
+require('./server/config/database.js');
+
+/*** Load Schema files ***/
+require('./server/model/schema.js');
+
 
 /* Routing */
-
 app.get('/add_user', function(req, res) {
     res.render('profiles/add');
 });
@@ -40,14 +27,20 @@ app.get('/list_user', function(req, res ) {
    res.render('profiles/list');
 });
 app.post('/user_add',function(req, res, next) {
-   res.send('Under process');
+   var user = {};
+    user.fullname = req.param('fullname');
+    user.fathername = req.param('fathername');
+    user.username = req.param('username');
+    user.password = req.param('password');
+    user.email = req.param('email');
+    user.age = req.param('age');
+    user.other = req.param('other');
+    var User = mongoose.model('userModel');
+    res.send(User);
+
 });
-/* Connect to database*/
-mongoose.connect('mongodb://localhost/fitness');
-var con = mongoose.connection;
-con.once('connected', function () {
-   console.log('Database has been connected to fitness Mongodb');
-});
+
+//---generate Schema
 
 app.get('*', function(req, res) {
 
