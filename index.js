@@ -16,7 +16,7 @@ require('./server/config/config.js')(app, express);
 require('./server/config/database.js');
 
 /*** Load Schema files ***/
-require('./server/model/schema.js');
+var schema=require('./server/model/schema.js');
 
 
 /* Routing */
@@ -26,19 +26,7 @@ app.get('/add_user', function(req, res) {
 app.get('/list_user', function(req, res ) {
    res.render('profiles/list');
 });
-app.post('/user_add',function(req, res, next) {
-   var user = {};
-    user.fullname = req.param('fullname');
-    user.fathername = req.param('fathername');
-    user.username = req.param('username');
-    user.password = req.param('password');
-    user.email = req.param('email');
-    user.age = req.param('age');
-    user.other = req.param('other');
-    var User = mongoose.model('userModel');
-    res.send(User);
-
-});
+app.post('/user_add',schema.add);
 
 //---generate Schema
 

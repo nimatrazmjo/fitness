@@ -1,16 +1,31 @@
 var mongoose = require('mongoose');
+var userSchema = mongoose.Schema({
+    fullname : String,
+    fathername : String,
+    username : String,
+    password : String,
+    email : String,
+    age : Number,
+    other : String
+});
+var User = mongoose.model('User',userSchema);
 
-var Schema = mongoose.Schema;
-
-module.exports = function() {
-    var userSchema = new Schema({
-        fullname : String,
-        fathername : String,
-        username : String,
-        password : String,
-        email : String,
-        age : Number,
-        other : String
+module.exports.add = function(req,res, next) {
+    var rec = records_json(req);
+    User.create(rec, function(err) {
+        if(err) return next(err);
+        res.redirect('/');
     });
-    var User = mongoose.model('userModel',userSchema);
+}
+
+var records_json = function(req) {
+    var user = {};
+    user.fullname = req.param('fullname');
+    user.fathername = req.param('fathername');
+    user.username = req.param('username');
+    user.password = req.param('password');
+    user.email = req.param('email');
+    user.age = req.param('age');
+    user.other = req.param('other');
+    return user;
 }
