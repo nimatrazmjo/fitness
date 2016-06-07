@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    fieldset
+        legend All Users
+        button.btn.btn-info(onclick="window.location.href='/add_user'") Add New User
+        table.table.table-responsive.table-striped
+            thead
+                tr
+                    th #
+                    th Full Name
+                    th Father name
+                    th age
+                    th Matrial Status
+                    th Action

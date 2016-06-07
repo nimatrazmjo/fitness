@@ -119,3 +119,6 @@ footer p{
     background: #fff;
     min-height: 460px;
 }
+input{
+    width: 60% !important;
+}

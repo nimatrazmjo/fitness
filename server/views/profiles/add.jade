@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+        fieldset
+            legend New User
+            form.form-horizontal(method="post",action="user_add", accept-charset="utf-8")
+                .form-group
+                    label(for="fullname", class="control-label") Full Name :
+                    input(name="fullname", id="fullname" required).form-control.input-sm
+                .form-group
+                    label(for="fathername", class="control-label") Father Name :
+                    input(name="fathername", id="fathername" required).form-control.input-sm
+                .form-group
+                    label(for="username", class="control-label") Login/user name :
+                    input(name="username", id="username" required).form-control.input-sm
+                .form-group
+                    label(for="password", class="control-label") Password :
+                    input(type="password",name="password", id="password").form-control.input-sm
+                .form-group
+                    label(for="email", class="control-label" required) Email Address :
+                    input(name="email", id="email", type="email").form-control.input-sm
+
+                .form-group
+                    label(for="age", class="control-label") Age :
+                    input(name="age", id="age" required).form-control.input-sm
+                .form-group
+                    label(for="other", class="control-label") Other Information :
+                    textarea(name="other", id="other", cols=8,rows=4 required).form-control.input-sm
+                .form-group
+                    button(type="submit").btn.btn-success Save
+                    button.btn.btn-danger(type="button", onclick="window.location.href='/list_user'") Back to list
