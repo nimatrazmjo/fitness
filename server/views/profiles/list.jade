@@ -12,5 +12,15 @@ block content
                     th Full Name
                     th Father name
                     th age
-                    th Matrial Status
                     th Action
+            tbody
+                each p in records
+                  tr
+                     td=p._id
+                     td=p.fullname
+                     td=p.fathername
+                     td=p.age
+                     td
+                        a(href="/edit/#{p._id}") Edit
+                        a(href="/view/#{p._id}") View
+                        a(href="/delete/#{p._id}") Delete

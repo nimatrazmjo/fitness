@@ -13,7 +13,7 @@ var express = require('express'),
 require('./server/config/config.js')(app, express);
 
 /*** Connect to database*/
-require('./server/config/database.js');
+require('./server/config/database.js')(mongoose);
 
 /*** Load Schema files ***/
 var schema=require('./server/model/schema.js');
@@ -23,9 +23,7 @@ var schema=require('./server/model/schema.js');
 app.get('/add_user', function(req, res) {
     res.render('profiles/add');
 });
-app.get('/list_user', function(req, res ) {
-   res.render('profiles/list');
-});
+app.get('/list_user', schema.allRecords);
 app.post('/user_add',schema.add);
 
 //---generate Schema

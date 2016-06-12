@@ -14,7 +14,7 @@ module.exports.add = function(req,res, next) {
     var rec = records_json(req);
     User.create(rec, function(err) {
         if(err) return next(err);
-        res.redirect('/');
+        res.redirect('/list_user');
     });
 }
 
@@ -28,4 +28,12 @@ var records_json = function(req) {
     user.age = req.param('age');
     user.other = req.param('other');
     return user;
+}
+module.exports.allRecords = function(req, res, next)
+{
+    User.find({}).exec(function(err, collection) {
+
+        console.log(collection);
+        res.render('profiles/list',{records : collection});
+    });
 }
