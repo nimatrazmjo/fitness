@@ -10,6 +10,8 @@ var userSchema = mongoose.Schema({
 });
 var User = mongoose.model('User',userSchema);
 
+/** Add records to DB **/
+
 module.exports.add = function(req,res, next) {
     var rec = records_json(req);
     User.create(rec, function(err) {
@@ -29,11 +31,21 @@ var records_json = function(req) {
     user.other = req.param('other');
     return user;
 }
-module.exports.allRecords = function(req, res, next)
-{
-    User.find({}).exec(function(err, collection) {
 
-        console.log(collection);
+/** List all records **/
+
+module.exports.allRecords = function(req, res, next) {
+    User.find({}).exec(function(err, collection) {
         res.render('profiles/list',{records : collection});
+    });
+}
+
+/** View selected records **/
+
+module.exports.views = function (req, res, next) {
+    var id = req.param('id');
+    User.findById(id).exec(function(err, collection) {
+       if(err) return next(err);
+       res.render('profiles/view',{data:collection});
     });
 }

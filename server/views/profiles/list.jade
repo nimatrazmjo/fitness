@@ -21,6 +21,9 @@ block content
                      td=p.fathername
                      td=p.age
                      td
-                        a(href="/edit/#{p._id}") Edit
-                        a(href="/view/#{p._id}") View
-                        a(href="/delete/#{p._id}") Delete
+                        a(href="/edit_user/#{p._id}", alt="Edit").btn
+                            i.glyphicon.glyphicon-edit
+                        a(href="/view_user/#{p._id}", alt="View").btn
+                            i.glyphicon.glyphicon-expand
+                        a(href="/delete_user/#{p._id}",alt="Remove").btn
+                            i.glyphicon.glyphicon-remove-circle
