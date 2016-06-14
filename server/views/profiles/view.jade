@@ -41,21 +41,21 @@ block content
                         td
                             - var n=10
                             select(name="neck",id="neck")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Shoulder
                         td
                             - var n=10
                             select(id="shoulder", name="shoulder")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Chest
                         td
                             - var n=10
                             select(name="chest",id="chest")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                     tr
@@ -63,21 +63,21 @@ block content
                         td
                             - var n=10
                             select(name="right_arm",id="right_arm")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Left Arm
                         td
                             - var n=10
                             select(id="left_arm", name="left_arm")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Waist
                         td
                             - var n=10
                             select(name="waist",id="waist")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                     tr
@@ -85,21 +85,21 @@ block content
                         td
                             - var n=10
                             select(name="hips",id="hips")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Right Thigh
                         td
                             - var n=10
                             select(id="right_thigh", name="righ_thigh")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Left Thigh
                         td
                             - var n=10
                             select(name="left_thigh",id="left_thigh")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                     tr
@@ -107,19 +107,20 @@ block content
                         td
                             - var n=10
                             select(name="right_calf",id="right_calf")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                         th Left Calf
                         td(colspan="3")
                             - var n=10
                             select(id="left_calf", name="left_calf")
-                                option Select an option
+                                option(value="0") Select an option
                                 while n < 100
                                     option= n++
                     tr
                         td(colspan="6")
                             a.btn.btn-danger.discard.pull-right Cancel
+                            button(type="submit").btn.btn-success Add
         h4 Body Information List
         table.table-responsive.table-striped.table.center
             thead
