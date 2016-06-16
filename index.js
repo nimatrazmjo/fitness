@@ -7,7 +7,7 @@
 var express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
-    port = 2000;
+    port = 9000;
 
 /*** Configuration files ***/
 require('./server/config/config.js')(app, express);

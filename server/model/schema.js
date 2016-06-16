@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var notifier = require('node-notifier');
 var userSchema = mongoose.Schema({
     fullname : String,
     fathername : String,
@@ -16,6 +17,10 @@ module.exports.add = function(req,res, next) {
     var rec = records_json(req);
     User.create(rec, function(err) {
         if(err) return next(err);
+        notifier.notify({
+            'title': 'Congratulation!',
+            'message': 'Records successfully inserted'
+        });
         res.redirect('/list_user');
     });
 }
