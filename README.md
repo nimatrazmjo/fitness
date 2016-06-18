@@ -18,10 +18,10 @@ It is designed to track your weight, body, and exercises that you do.
 </ul>
 
 # Installation
-
- 1 -> Clone the repository.
- 2 -> npm install.
- 3 -> Make sure your mongoDB databse si running if not: mongod
- 4-> go to browser and type http://localhost:9000
-
+<ul>
+<ol>Clone the repository. </ol>
+<ol>npm install.</ol>
+<ol>Make sure your mongoDB databse si running if not: mongod </ol>
+<ol>go to browser and type http://localhost:9000 </ol>
+</ul>
   
