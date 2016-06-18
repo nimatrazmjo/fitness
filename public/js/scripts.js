@@ -5,4 +5,4 @@ $('#new_size').click(function(){
 $(".discard").click(function () {
     $(".add-size").css("display","none");
     $("#new_size").css("display","block");
-})
+});

@@ -7,9 +7,43 @@ var userSchema = mongoose.Schema({
     password : String,
     email : String,
     age : Number,
-    other : String
+    other : String,
+    sizes : [{type: mongoose.Schema.Types.ObjectId, ref:'Size'}]
 });
+
+var sizeSchema = mongoose.Schema({
+    neck: Number,
+    shoulder: Number,
+    chest: Number,
+    right_arm: Number,
+    left_arm: Number,
+    waist: Number,
+    hips: Number,
+    righ_thigh: Number,
+    left_thigh: Number,
+    right_calf: Number,
+    left_calf: Number,
+    _creator : { type: Number, ref: 'User' },
+    fans     : [{ type: Number, ref: 'User' }]
+});
+
+var Size = mongoose.model('Size',sizeSchema);
+
 var User = mongoose.model('User',userSchema);
+
+
+
+module.exports.addBody = function(req, res, next) {
+
+    Size.populate(req.body,{path:"_creator"}, function (err, collection) {
+        console.log('collection'+collection);
+        users.push({
+            _creator:"10212102120102100"
+        });
+    })
+    res.redirect('/');
+}
+
 
 /** Add records to DB **/
 

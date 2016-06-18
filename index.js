@@ -30,7 +30,7 @@ app.post('/user_add',schema.add);
 
 /** Body Size routing **/
 
-app.post('/new_size', bodySchema.add);
+app.post('/new_size', schema.addBody);
 
 //---generate Schema
 
