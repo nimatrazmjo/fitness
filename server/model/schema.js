@@ -37,7 +37,11 @@ var User = mongoose.model('User',userSchema);
             var usr = collection;
             usr.sizes.push(req.body);
             usr.save(function(err, result) {
-                res.json(result);
+                notifier.notify({
+                    'title': 'Congratulation!',
+                    'message': 'Records successfully inserted'
+                });
+                res.redirect('/view_user/'+req.body._creator);
             });
         });
     }

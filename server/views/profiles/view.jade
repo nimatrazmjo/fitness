@@ -138,5 +138,18 @@ block content
                     th Left Thigh
                     th Right Calf
                     th Left Calf
-
+                each p in data.sizes
+                    tr
+                        td=p._id
+                        td=p.neck
+                        td=p.shoulder
+                        td=p.right_arm
+                        td=p.left_arm
+                        td=p.chest
+                        td=p.waist
+                        td=p.hips
+                        td=p.righ_thigh
+                        td=p.left_thigh
+                        td=p.right_calf
+                        td=p.left_calf
 
