@@ -87,46 +87,6 @@ module.exports.views = function (req, res, next) {
     });
 }
 
-    {
-        _id: "576656ca5eb67d110bf541a5",
-            fullname: "Advin Razmjo",
-        fathername: "Nimatullah",
-        username: "anna_admin",
-        password: "123123123",
-        email: "nimatullah.razmjo@gmail.com",
-        age: 21,
-        other: "1211312",
-        __v: 2,
-        sizes: [
-        {
-            neck: 10,
-            shoulder: 11,
-            chest: 11,
-            right_arm: 15,
-            left_arm: 12,
-            waist: 12,
-            hips: 13,
-            righ_thigh: 12,
-            left_thigh: 14,
-            right_calf: 14,
-            left_calf: 12,
-            _id: "57665f2c2678827c0b0960fc"
-        },
-        {
-            neck: 10,
-            shoulder: 11,
-            chest: 11,
-            right_arm: 15,
-            left_arm: 12,
-            waist: 12,
-            hips: 13,
-            righ_thigh: 12,
-            left_thigh: 14,
-            right_calf: 14,
-            left_calf: 12,
-            _id: "57665f3d2678827c0b0960fd"
-        }
-    ]
-    }
+
 
 
