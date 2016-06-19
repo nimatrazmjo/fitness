@@ -1,15 +1,6 @@
 var mongoose = require('mongoose');
 var notifier = require('node-notifier');
-var userSchema = mongoose.Schema({
-    fullname : String,
-    fathername : String,
-    username : String,
-    password : String,
-    email : String,
-    age : Number,
-    other : String,
-    sizes : [{type: mongoose.Schema.Types.ObjectId, ref:'Size'}]
-});
+
 
 var sizeSchema = mongoose.Schema({
     neck: Number,
@@ -22,27 +13,34 @@ var sizeSchema = mongoose.Schema({
     righ_thigh: Number,
     left_thigh: Number,
     right_calf: Number,
-    left_calf: Number,
-    _creator : { type: Number, ref: 'User' },
-    fans     : [{ type: Number, ref: 'User' }]
+    left_calf: Number
 });
 
-var Size = mongoose.model('Size',sizeSchema);
+var userSchema = mongoose.Schema({
+    fullname : String,
+    fathername : String,
+    username : String,
+    password : String,
+    email : String,
+    age : Number,
+    other : String,
+    sizes : [sizeSchema]
+});
 
 var User = mongoose.model('User',userSchema);
 
 
 
-module.exports.addBody = function(req, res, next) {
+    module.exports.addBody = function(req, res, next) {
 
-    Size.populate(req.body,{path:"_creator"}, function (err, collection) {
-        console.log('collection'+collection);
-        users.push({
-            _creator:"10212102120102100"
+        var user = User.findById(req.body._creator, function(err, collection){
+            var usr = collection;
+            usr.sizes.push(req.body);
+            usr.save(function(err, result) {
+                res.json(result);
+            });
         });
-    })
-    res.redirect('/');
-}
+    }
 
 
 /** Add records to DB **/
@@ -88,3 +86,47 @@ module.exports.views = function (req, res, next) {
        res.render('profiles/view',{data:collection});
     });
 }
+
+    {
+        _id: "576656ca5eb67d110bf541a5",
+            fullname: "Advin Razmjo",
+        fathername: "Nimatullah",
+        username: "anna_admin",
+        password: "123123123",
+        email: "nimatullah.razmjo@gmail.com",
+        age: 21,
+        other: "1211312",
+        __v: 2,
+        sizes: [
+        {
+            neck: 10,
+            shoulder: 11,
+            chest: 11,
+            right_arm: 15,
+            left_arm: 12,
+            waist: 12,
+            hips: 13,
+            righ_thigh: 12,
+            left_thigh: 14,
+            right_calf: 14,
+            left_calf: 12,
+            _id: "57665f2c2678827c0b0960fc"
+        },
+        {
+            neck: 10,
+            shoulder: 11,
+            chest: 11,
+            right_arm: 15,
+            left_arm: 12,
+            waist: 12,
+            hips: 13,
+            righ_thigh: 12,
+            left_thigh: 14,
+            right_calf: 14,
+            left_calf: 12,
+            _id: "57665f3d2678827c0b0960fd"
+        }
+    ]
+    }
+
+
