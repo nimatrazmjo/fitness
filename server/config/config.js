@@ -1,10 +1,10 @@
 var bodyParser = require('body-parser'),
     stylus = require('stylus'),
     path = require('path');
+var rootpath = path.normalize(__dirname+'/../../');
 module.exports = function (app, express) {
 
     /* basic configuration */
-    var rootpath = path.normalize(__dirname+'/../../');
     app.set('views',rootpath+'/server/views');
     app.set('view engine','jade');
 
@@ -22,4 +22,7 @@ module.exports = function (app, express) {
         src: __dirname+'/public',
         compile : compile
     }));
+
 }
+
+

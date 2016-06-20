@@ -1,0 +1,55 @@
+extends ../layout
+block content
+
+    fieldset
+        legend All Workouts
+        button.btn.btn-primary(data-toggle="modal" data-target="#squarespaceModal") Add New Workouts
+        table.table.table-responsive.table-striped
+            thead
+                th #
+                th Type
+                th Name
+                th Details
+                th Action
+            tbody
+            each d in data
+                tr
+                    td=d._id
+                    td=d.type
+                    td=d.name
+                    td=d.detailss
+                    td
+                        a.btn.btn-success(href="/workouts/#{ d._id }") Delete
+
+
+
+
+        .modal.fade#squarespaceModal(tabindex="-1",role="dialog",aria-labelledby="modalLabel",aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    form(method="post",action="/add_workouts", accept-charset="utf8")
+                        .modal-header
+                            button.close(data-dismiss="modal")
+                                span(aria-hidden="true") x
+                                span.sr-only Close
+                            h3.modal-title#lineModalLabel Add New Workouts
+                        .modal-body
+
+                                .body-group
+                                    label(for="type") Type
+                                    select.form-control(name="type",id="type")
+                                        each rec in body
+                                            option=rec.name
+                                .body-group
+                                    label(for="name") Name
+                                    input.form-control(type="text" ,name="name")
+                                .body-group
+                                    label(for="details") Details
+                                    textarea.form-control(rows=2,cols=8,name="detailss", id="detailss")
+
+
+
+                        .modal-footer
+                            input.btn.btn-primary(type="submit", value="Submit")
+                            button.btn.btn-default(data-dismiss="modal",role="buttom") Close
+
