@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    fieldset
+        legend Contact Us
+
+        form.form.form-horizontal(action="/contact_us", method="post")
+            .body-group
+                label(for="name").control-label Full name
+                input(name="name").form-control
+            .body-group
+                label(for="email").control-label Email Address
+                input(name="email").form-control
+            .body-group
+                label(for="subject").control-label Subject
+                input(name="subject").form-control
+            .body-group
+                label(for="message").control-label Message
+                textarea(rows=3,cols=8,name="message").form-control
+            .body-group
+                span
+                    input(type="submit", value="Send").btn.btn-success

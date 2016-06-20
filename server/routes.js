@@ -1,4 +1,5 @@
-path = require('path');
+var path = require('path');
+var notifier = require('node-notifier');
 module.exports = function(app,config) {
 
     /*** Load Schema files ***/
@@ -20,8 +21,23 @@ module.exports = function(app,config) {
     var workouts = require(rootpath+'/server/model/workouts');
     app.get("/workouts",workouts.allrecords);
     app.post('/add_workouts',workouts.saverecords);
-
     app.get('/workouts/:id',workouts.deleterecords);
+
+    /** Contact Us **/
+    app.get('/contact-us',function(req, res) {
+       res.render('contact_us');
+    });
+    app.post('/contact_us',function(req, res) {
+        notifier.notify({
+            'title': 'Thank you!',
+            'message': 'We recieve you email. We will get back to you within 24 hours'
+        });
+        res.redirect("/");
+    });
+
+    app.get('/about_us', function(req, res) {
+       res.render('about_us');
+    });
 
     /** Default Routing **/
     app.get('*', schema.allRecords);
