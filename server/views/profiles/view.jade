@@ -126,7 +126,6 @@ block content
         table.table-responsive.table-striped.table.center
             thead
                 tr
-                    th #
                     th Neck
                     th Shoulder
                     th Right Arm
@@ -138,9 +137,9 @@ block content
                     th Left Thigh
                     th Right Calf
                     th Left Calf
+                    th Action
                 each p in data.sizes
-                    tr
-                        td=p._id
+                    tr(id="tr_"+p._id)
                         td=p.neck
                         td=p.shoulder
                         td=p.right_arm
@@ -152,4 +151,6 @@ block content
                         td=p.left_thigh
                         td=p.right_calf
                         td=p.left_calf
+                        td
+                            a.btn.btn-success(href="#assign_workout", class="Assign_workout", id=p._id) Assign Workout
 
