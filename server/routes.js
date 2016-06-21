@@ -5,6 +5,7 @@ module.exports = function(app,config) {
     /*** Load Schema files ***/
     var rootpath = path.normalize(__dirname+'/../');
     var schema=require(rootpath+'/server/model/schema.js');
+    var auth = require(rootpath+'/server/model/authenticate.js');
 
     /* Routing */
     app.get('/add_user', function(req, res) {
@@ -35,9 +36,16 @@ module.exports = function(app,config) {
         res.redirect("/");
     });
 
+    /** About Us **/
     app.get('/about_us', function(req, res) {
        res.render('about_us');
     });
+
+    /*** Athenticate **/
+
+    app.get('/login', auth.login);
+    app.get('/signup', auth.signup);
+    app.post('/signup', auth.signuppost);
 
     /** Default Routing **/
     app.get('*', schema.allRecords);
