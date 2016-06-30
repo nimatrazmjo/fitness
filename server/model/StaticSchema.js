@@ -19,4 +19,23 @@ module.exports = exports =function(mongoose) {
             bodyType.create({name: "Calf"});
        }
     });
+
+    var weekDays = mongoose.Schema(
+        {
+            name: String
+        }
+    )
+
+    var Days = mongoose.model('Days', weekDays);
+    Days.find({}).exec(function(err, collection) {
+       if(collection.length == 0) {
+           Days.create({name: "Saturday"});
+           Days.create({name: "Sunday"});
+           Days.create({name: "Monday"});
+           Days.create({name: "Tuesday"});
+           Days.create({name: "Wednesday"});
+           Days.create({name: "Thursday"});
+           Days.create({name: "Friday"});
+       }
+    });
 }

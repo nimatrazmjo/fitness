@@ -16,6 +16,8 @@ var sizeSchema = mongoose.Schema({
     left_calf: Number
 });
 
+var sizeWorkout = mongoose.Schema()
+
 var userSchema = mongoose.Schema({
     fullname : String,
     fathername : String,
