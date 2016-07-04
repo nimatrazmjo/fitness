@@ -152,5 +152,29 @@ block content
                         td=p.right_calf
                         td=p.left_calf
                         td
-                            a.btn.btn-success(href="#assign_workout", class="Assign_workout", id=p._id) Assign Workout
+                            a.btn.btn-success(href="#assign_workout", class="Assign_workout", id=p._id, data-toggle="modal" data-target="#squarespaceModal") Assign Workout
 
+
+        .modal.fade#squarespaceModal(tabindex="-1",role="dialog",aria-labelledby="modalLabel",aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    form(method="post",action="/add_workouts", accept-charset="utf8")
+                        .modal-header
+                            button.close(data-dismiss="modal")
+                                span(aria-hidden="true") x
+                                span.sr-only Close
+                            h3.modal-title#lineModalLabel Add New Workouts
+                        .modal-body
+                            .body-group
+                                label(for="type") Type
+                                select.form-control(name="type",id="type")
+
+                            .body-group
+                                label(for="name") Name
+                                input.form-control(type="text" ,name="name")
+                            .body-group
+                                label(for="details") Details
+                                textarea.form-control(rows=2,cols=8,name="detailss", id="detailss")
+                                    .modal-footer
+                            input.btn.btn-primary(type="submit", value="Submit")
+                            button.btn.btn-default(data-dismiss="modal",role="buttom") Close
