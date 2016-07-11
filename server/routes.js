@@ -6,6 +6,7 @@ module.exports = function(app,config) {
     var rootpath = path.normalize(__dirname+'/../');
     var schema=require(rootpath+'/server/model/schema.js');
     var auth = require(rootpath+'/server/model/authenticate.js');
+    var blog = require(rootpath+'/server/model/blog.js');
 
     /* Routing */
     app.get('/add_user', function(req, res) {
@@ -47,6 +48,9 @@ module.exports = function(app,config) {
     app.get('/signup', auth.signup);
     app.post('/signup', auth.signuppost);
 
+    /** Blog  **/
+
+    app.get('/blog', blog.listRecords);
     /** Default Routing **/
     app.get('*', schema.allRecords);
 }
