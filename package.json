@@ -13,6 +13,7 @@
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "mongoose": "^4.4.20",
+    "multer": "^1.1.0",
     "node-notifier": "^4.6.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",

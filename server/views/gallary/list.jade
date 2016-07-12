@@ -1,0 +1,68 @@
+extends ../layout
+
+block content
+    style.
+        .carousel-inner > .item > a > img, .carousel-inner > .item > img {
+            height: 200px !important;
+            width: 100% !important;
+        }
+    fieldset
+        legend
+            h1 Gallary
+        a.btn.btn-success(data-toggle="modal", data-target="#squarespaceModal") Add new Image
+        .row
+            .col-lg-12
+
+                .carousel.slide(date-ride="carousel")#myCarousel
+                    ol.carousel-indicators
+                        - var count = 0
+                        each item in rec
+                            if count == 0
+                                li(data-target="#myCarousel", data-slide-to=count+1).active
+                            else
+                                li(data-target="#myCarousel", data-slide-to=count+1)
+
+                    .carousel-inner(role="listbox")
+                        - var cnt = 0
+                        each item in rec
+                            if cnt == 0
+                               .item.active
+                               - cnt++
+                            else
+                               .item
+                                    img(src="/uploads/"+item.name)
+                                    .carousel-caption
+                                        h3=item.title
+                                        p=item.details
+
+                     .left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+                         span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+                         span.sr-only Previous
+                     .right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+                         span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+                         span.sr-only Next
+
+        .modal.fade#squarespaceModal(tabindex="-1",role="dialog",aria-labelledby="modalLabel",aria-hidden="true")
+            .modal-dialog
+                .modal-content
+                    form(method="post",action="/gallary-add", accept-charset="utf8", enctype="multipart/form-data")
+                        .modal-header
+                            button.close(data-dismiss="modal")
+                                span(aria-hidden="true") x
+                                span.sr-only Close
+                            h3.modal-title#lineModalLabel Add New Images
+                        .modal-body
+
+                            .body-group
+                                label(for="title") Title
+                                input.form-control(type="text" ,name="title", id="title", maxlength=50)
+                            .body-group
+                                label(for="details") Details
+                                input.form-control(type="text" ,name="details", id="details", maxlength=250)
+                            .body-group
+                                label(for="image_file") Please select a Image
+                                input.form-control(type="file" ,name="image_file", id="image_file")
+
+                        .modal-footer
+                            input.btn.btn-primary(type="submit", value="Submit")
+                            button.btn.btn-default(data-dismiss="modal",role="buttom") Close

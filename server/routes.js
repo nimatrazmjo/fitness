@@ -1,5 +1,7 @@
 var path = require('path');
-var notifier = require('node-notifier');
+var notifier = require('node-notifier'),
+    multer = require('multer'),
+    uploads = multer({dest: 'public/uploads'})
 module.exports = function(app,config) {
 
     /*** Load Schema files ***/
@@ -7,6 +9,7 @@ module.exports = function(app,config) {
     var schema=require(rootpath+'/server/model/schema.js');
     var auth = require(rootpath+'/server/model/authenticate.js');
     var blog = require(rootpath+'/server/model/blog.js');
+    var gallary = require(rootpath+'/server/model/gallary.js');
 
     /* Routing */
     app.get('/add_user', function(req, res) {
@@ -51,6 +54,11 @@ module.exports = function(app,config) {
     /** Blog  **/
 
     app.get('/blog', blog.listRecords);
+
+    /** Gallary **/
+
+    app.get('/gallary',gallary.list);
+    app.post('/gallary-add',uploads.single('image_file'),gallary.add);
     /** Default Routing **/
     app.get('*', schema.allRecords);
 }
