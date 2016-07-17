@@ -27,6 +27,10 @@ block content
                         each item in rec
                             if cnt == 0
                                .item.active
+                                   img(src="/uploads/"+item.name)
+                                   .carousel-caption
+                                        h3=item.title
+                                        p=item.details
                                - cnt++
                             else
                                .item
