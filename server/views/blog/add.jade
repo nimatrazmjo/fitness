@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    .row
+        fieldset
+            legend
+                h4 Add new post
+                form(action="/post_record", method="post", accept-charset="utf8")
+                    .form-group
+                        label(for="title").control-label Title
+                        input(name="title", id="title").form-control
+                    .form-group
+                        label(for="content").control-label Content
+                        textarea(name="content", id="content", rows="10").form-control
+                    .form-group
+                            input(type="submit" value="Post").btn.btn-primary
+

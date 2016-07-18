@@ -54,7 +54,8 @@ module.exports = function(app,config) {
     /** Blog  **/
 
     app.get('/blog', blog.listRecords);
-
+    app.get('/new_post',blog.add);
+    app.post('/post_record', blog.store);
     /** Gallary **/
 
     app.get('/gallary',gallary.list);

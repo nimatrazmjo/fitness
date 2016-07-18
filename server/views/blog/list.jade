@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    fieldset
+        legend
+            h1 List of Posts
+            a(href="/new_post") Add new posts
+            .row
+                each item in records
+                    .col-lg-12
+                        h3=item.title
+                        p=item.body
+                        .modal-footer
+                            small Nimatullah Razmjo
