@@ -3,7 +3,7 @@ extends ../layout
 block content
     style.
         .carousel-inner > .item > a > img, .carousel-inner > .item > img {
-            height: 200px !important;
+            height: 500px !important;
             width: 100% !important;
         }
     fieldset
@@ -17,10 +17,11 @@ block content
                     ol.carousel-indicators
                         - var count = 0
                         each item in rec
-                            if count == 0
-                                li(data-target="#myCarousel", data-slide-to=count+1).active
+                            - count ++
+                            if count == 1
+                                li(data-target="#myCarousel", data-slide-to=count).active
                             else
-                                li(data-target="#myCarousel", data-slide-to=count+1)
+                                li(data-target="#myCarousel", data-slide-to=count)
 
                     .carousel-inner(role="listbox")
                         - var cnt = 0
@@ -38,6 +39,7 @@ block content
                                     .carousel-caption
                                         h3=item.title
                                         p=item.details
+                            - cnt=cnt+1
 
                      .left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
                          span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
