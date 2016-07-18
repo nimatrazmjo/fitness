@@ -8,7 +8,16 @@ block content
             .row
                 each item in records
                     .col-lg-12
-                        h3=item.title
-                        p=item.body
+                        a(href="/view_post/"+item._id)
+                            h3=item.title
+                        p=item.body.substring(0,150)+" ..."
                         .modal-footer
                             small Nimatullah Razmjo
+
+block scripts
+    script(type='text/javascript').
+        $(document).ready(function () {
+            $(".answer").on('click', function () {
+                alert('response');
+            })
+        });

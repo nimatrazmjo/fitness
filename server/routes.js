@@ -46,20 +46,21 @@ module.exports = function(app,config) {
     });
 
     /*** Athenticate **/
-
     app.get('/login', auth.login);
     app.get('/signup', auth.signup);
     app.post('/signup', auth.signuppost);
 
     /** Blog  **/
-
     app.get('/blog', blog.listRecords);
     app.get('/new_post',blog.add);
     app.post('/post_record', blog.store);
-    /** Gallary **/
+    app.get('/view_post/:id',blog.show);
+    app.post('/answer_post', blog.post_answer);
 
+    /** Gallary **/
     app.get('/gallary',gallary.list);
     app.post('/gallary-add',uploads.single('image_file'),gallary.add);
+
     /** Default Routing **/
     app.get('*', schema.allRecords);
 }

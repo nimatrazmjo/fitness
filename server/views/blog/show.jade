@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+    fieldset
+        legend
+            .row
+                .col-lg-12
+                    h3=collection.title
+                    p=collection.body
+            .row
+                .col-lg-12
+                    .panel-title.toast-title
+                        h3 Your Comment
+                    form(action="/answer_post", method="post")
+                        .form-group
+                            label(for="fullname").control-label Full Name
+                            input(name="fullname", id="fullname", "required").form-control
+                        .form-group
+                            label(for="email").control-label Email
+                            input(name="email", id="email", type="email" "required").form-control
+                        .form-group
+                            label.control-label(for="comment") Comment
+                            textarea(rows="10", name="comment", id="comment","required").form-control
+                        .form-group
+                            input(type="hidden", name="question_id", value=collection._id)
+                            input(type="submit" value="Post").btn.btn-primary
