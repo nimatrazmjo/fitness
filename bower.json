@@ -15,11 +15,11 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^2.2.4",
     "bootstrap": "^3.3.6",
     "toastr": "^2.1.2",
     "angular": "^1.5.7",
     "angular-resource": "^1.5.7",
-    "angular-route": "^1.5.7"
+    "angular-route": "^1.5.7",
+    "jquery": "1.6.3"
   }
 }

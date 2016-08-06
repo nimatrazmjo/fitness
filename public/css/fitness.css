@@ -10,7 +10,7 @@ footer p{
     padding-right: 27px;
 }
 #left_side {
-    padding-left: 0 !important;
+    margin-left: -30px !important;
 }
 /* Profile container */
 .profile {
