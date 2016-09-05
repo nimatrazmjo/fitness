@@ -7,22 +7,32 @@ footer p{
 .header_right {
     padding-top: 8px;
     padding-right: 27px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 #left_side {
     margin-left: -30px !important;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 /* Profile container */
 .profile {
     margin: 20px 0;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 .navbar-inverse {
     border: none !important;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 /* Profile sidebar */
 .profile-sidebar {
     padding: 20px 0 10px 0;
     background-color: #212121;
     height: 95%;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-userpic img {
@@ -32,11 +42,15 @@ footer p{
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usertitle {
     text-align: center;
     margin-top: 20px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usertitle-name {
@@ -44,6 +58,8 @@ footer p{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 7px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usertitle-job {
@@ -52,6 +68,8 @@ footer p{
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 15px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-userbuttons {
@@ -65,39 +83,55 @@ footer p{
     font-weight: 600;
     padding: 6px 15px;
     margin-right: 5px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-userbuttons .btn:last-child {
     margin-right: 0px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu {
     margin-top: 30px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li {
     border-bottom: 1px solid #f0f4f7;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li:last-child {
     border-bottom: none;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li a {
     color: #93a3b5;
     font-size: 14px;
     font-weight: 400;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li a i {
     margin-right: 8px;
     font-size: 14px;
     float: right;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li a:hover {
     background-color: #fafcfd;
     color: #5b9bd1;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .profile-usermenu ul li.active {
@@ -116,7 +150,11 @@ footer p{
     padding: 20px;
     background: #fff;
     min-height: 460px;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
-input{
+input, textarea{
     width: 60% !important;
+    -webkit-transtion :all 0.5s ease;
+    transition:all 0.5s ease;
 }
