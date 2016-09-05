@@ -2,25 +2,20 @@ html
     head
         title Fitness Records - Nimatullah
         link(href="/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+        link(href="/css/style.css", rel="stylesheet")
         link(href="/css/fitness.css", rel="stylesheet")
-        link(href="/css/custom.css", rel="stylesheet")
-        link(href="/toastr/toastr.min.css")
+        //link(href="/css/custom.css", rel="stylesheet")
+        //link(href="/toastr/toastr.min.css")
     body(ng-app="apps")
-        div.container-fluid
-            .row-fluid
-                header.navbar.navbar-inverse.navbar-fixed-top.col-sm-12
-                    .navbar-header
-                        button.navbar-toggle(data-toggle="collapse", data-target="#menu_linkss")
-                            span.sr-only Toggle navigation
-                            span.icon-bar
-                            span.icon-bar
-                            span.icon-bar
-                        button.btn.btn-sm(, style="margin-top:9px;").toggle_left Menu
-
-                        a.navbar-brand(href="/") Fitness Records
-                    .navbar-collapse.collapse#menu_linkss
-                        ul.nav.navbar-nav
-                            li
+        div.wrapper
+            div.navbar-header
+                button.navbar-toggle.collapsed.is-open(type="button",data-toggle="collapse",data-target="#navbar_menu",aria-expanded="false",aria-controls="navbar")
+                    span.line-top
+                    span.line-middle
+                    span.line-bottom
+            nav.navbar-collapse.collapse#navbar_menu
+                ul.nav.navbar-nav
+                    li
                                 a(href="/", class="active") Home
                             li
                                 a(href="/workouts") Workoutss
@@ -33,41 +28,127 @@ html
 
                             li
                                 a(href="/about_us") About Us
+            div.overlay
 
-            .row-fluid
-                aside.col-sm-3.col-lg-2#left_side
-                    .profile-sidebar
-                        .profile-userpic
-                            img(src="/images/profiles.jpg",class="img img-responsive")
+            nav.nav-wrapper.nav.navbar-inverse.navbar-fixed-top(role="navigation")
+                .profile-userpic
+                        img(src="/images/profiles.jpg",class="img img-responsive")
 
-                        .profile-usertitle
-                            .profile-usertitle-name Nimatullah Razmjo
-                            .profile-usertitle-job Fitness Trainer
-                        .profile-userbuttons
-                            button.btn.btn-success.btn-sm Follow
-                            button.btn.btn-danger.btn-sm Message
-                        .profile-usermenu
-                            ul.nav
-                                li
-                                    a(href="#home") Overview
-                                        i(class="glyphicon glyphicon-home")
-                                li
-                                    a(href="#home") Account Settings
-                                        i(class="glyphicon glyphicon-user")
-                                li
-                                    a(href="#home") Logout
-                                        i(class="glyphicon glyphicon-log-out")
-                section.col-sm-9.col-lg-10#content
-                        block content
+                .profile-usertitle
+                    .profile-usertitle-name Nimatullah Razmjo
+                    .profile-usertitle-job Fitness Trainer
+                .profile-userbuttons
+                    button.btn.btn-success.btn-sm Follow
+                    button.btn.btn-danger.btn-sm Message
+                ul.nav.sidebar-nav
+                    li
+                        a(href="#") Home
+                    li.dropdown
+                        a.dropdown-toggle(href="#",data-toggle="dropdown") Work
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="#home") Overview
+                                    i(class="glyphicon glyphicon-home pull-right")
+                            li
+                                a(href="#home") Account Settings
+                                    i(class="glyphicon glyphicon-user pull-right")
+                            li
+                                a(href="#home") Logout
+                                    i(class="glyphicon glyphicon-log-out pull-right")
 
-                footer.text-center.col-xs-12
-                    p &copy; 2016 Nimatullah Razmjo.
-
+            section.section-wrapper
+                button.nav-show.is-open(data-toggle="offcanvas")
+                    span.line-top
+                    span.line-middle
+                    span.line-bottom
+                div.container-fluid
+                    .row
+                        .col-lg-12
+                            block content
+        //    footer.text-center.col-xs-12
+        //        p &copy; 2016 Nimatullah Razmjo.
+        ////div.container-fluid
+        //    .row-fluid
+        //        header.navbar.navbar-inverse.navbar-fixed-top.col-sm-12
+        //            .navbar-header
+        //                button.navbar-toggle(data-toggle="collapse", data-target="#menu_linkss")
+        //                    span.sr-only Toggle navigation
+        //                    span.icon-bar
+        //                    span.icon-bar
+        //                    span.icon-bar
+        //                button.btn.btn-sm(, style="margin-top:9px;").toggle_left Menu
+        //
+        //                a.navbar-brand(href="/") Fitness Records
+        //            .navbar-collapse.collapse#menu_linkss
+        //                ul.nav.navbar-nav
+        //                    li
+        //                        a(href="/", class="active") Home
+        //                    li
+        //                        a(href="/workouts") Workoutss
+        //                    li
+        //                        a(href="/blog") Blog
+        //                    li
+        //                        a(href="/contact-us") Contact Us
+        //                    li
+        //                        a(href="/gallary") Gallary
+        //
+        //                    li
+        //                        a(href="/about_us") About Us
+        //
+        //    .row-fluid
+        //        aside.col-sm-3.col-lg-2#left_side
+        //            .profile-sidebar
+        //                .profile-userpic
+        //                    img(src="/images/profiles.jpg",class="img img-responsive")
+        //
+        //                .profile-usertitle
+        //                    .profile-usertitle-name Nimatullah Razmjo
+        //                    .profile-usertitle-job Fitness Trainer
+        //                .profile-userbuttons
+        //                    button.btn.btn-success.btn-sm Follow
+        //                    button.btn.btn-danger.btn-sm Message
+        //                .profile-usermenu
+        //                    ul.nav
+        //                        li
+        //                            a(href="#home") Overview
+        //                                i(class="glyphicon glyphicon-home")
+        //                        li
+        //                            a(href="#home") Account Settings
+        //                                i(class="glyphicon glyphicon-user")
+        //                        li
+        //                            a(href="#home") Logout
+        //                                i(class="glyphicon glyphicon-log-out")
+        //        section.col-sm-9.col-lg-10#content
+        //                block content
+        //
+        //
+        //        footer.text-center.col-xs-12
+        //            p &copy; 2016 Nimatullah Razmjo.
         include script
         .external_files
             block scripts
         script(type="text/javascript").
-            $(".toggle_left").click(function (e) {
-                e.preventDefault();
-                $("#left_side").toggleClass("toggled");
+            var nav_button = $(".nav-show");
+            var overlay = $(".overlay");
+            var is_open = false;
+            nav_button.on('click', function () {
+                show_hide();
+            });
+            function show_hide() {
+                if (is_open == false) {
+                    overlay.show();
+                    nav_button.removeClass("is-open");
+                    nav_button.addClass("is-closed");
+                    is_open = true;
+                } else {
+                    overlay.hide();
+                    nav_button.removeClass("is-closed");
+                    nav_button.addClass("is-open");
+                    is_open = false;
+                }
+            }
+
+            $('[data-toggle="offcanvas"]').click(function () {
+                $(".wrapper").toggleClass("toggle");
             });
