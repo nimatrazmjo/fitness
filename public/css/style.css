@@ -3,13 +3,13 @@ html, body {
 	margin: 0;
 	color: #000000;
 	-webkit-transtion :all 0.5s ease;
-			transition:all 0.5s ease;
+	       transition :all 0.5s ease;
 }
 .wrapper{
 	background: rgba(255, 255, 255, 0);
 	height: 100%;
 	-webkit-transtion :all 0.5s ease;
-			transition:all 0.5s ease;
+	       transition :all 0.5s ease;
 }
 .nav-wrapper {
 	height: 100%;
@@ -20,6 +20,7 @@ html, body {
 			transition:all 0.5s ease;
 	overflow-x: hidden;
 	overflow-y: auto;
+	background-color: rgba(255, 255, 255, 1);
 }
 .section-wrapper {
 	background-color: rgba(255, 255, 255, 0);;
@@ -33,7 +34,8 @@ html, body {
 .sidebar-nav > li >a,
 .dropdown-menu > li > a
 {
-	color: rgba(255, 255, 255, 1);
+	color: rgb(0, 0, 0);
+	border-bottom: 1px solid #9c9c9c;
 }
 .sidebar-nav >li:before,
 .dropdown-menu >li:before
@@ -82,7 +84,7 @@ html, body {
 	margin: 0;
 	border-radius: 0;
 	border: none;
-	background-color: #222;
+	background-color: rgb( 225, 225, 225, 1);
 	box-shadow: none;
 	-webkit-transtion :all 0.5s ease;
 			transition:all 0.5s ease;
@@ -130,7 +132,7 @@ ul.dropdown-menu > li{
 {
 	height: 3px;
     width: 100%;
-    background-color: #22caff;
+    background-color: rgba(9, 9, 24, 0.86);
     position: absolute;
     -webkit-transtion :all 0.5s ease;
 			transition:all 0.5s ease;
@@ -139,13 +141,13 @@ ul.dropdown-menu > li{
 
 .is-closed > .line-top {
 	-webkit-transform:rotate(45deg);
-	background-color: #22caff;
+	background-color: rgba(9, 9, 24, 0.86);
 	-webkit-transtion :all 0.5s ease;
 			transition:all 0.5s ease;
 }
 .is-closed > .line-bottom {
 	-webkit-transform:rotate(-45deg);
-	background-color: #22caff;
+	background-color: rgba(9, 9, 24, 0.86);
 	-webkit-transtion :all 0.5s ease;
 			transition:all 0.5s ease;
 }
@@ -233,4 +235,3 @@ ul.dropdown-menu > li{
 .maincontent{
 	padding-top:60px;
 }
-
