@@ -10,10 +10,11 @@ block content
                     p=collection.body
             each comment in collection.comment
                 .row
-                    .col-lg-2
-                        h6=comment.fullname
-                    .col-lg-10
-                        p=comment.comment
+                    .answers
+                        .col-lg-2
+                            h6=comment.fullname
+                        .col-lg-10
+                            p=comment.comment
             .row
                 .col-lg-12
                     .panel-title.toast-title

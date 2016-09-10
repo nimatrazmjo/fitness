@@ -160,3 +160,11 @@ input, textarea{
     -webkit-transtion :all 0.5s ease;
     transition:all 0.5s ease;
 }
+.answers
+{
+    padding: 20px;
+    background-color: #cccccc;
+    width: 100%;
+    height: auto;
+    position: inherit;
+}
