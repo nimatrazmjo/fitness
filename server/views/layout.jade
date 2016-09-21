@@ -16,16 +16,13 @@ html
             nav.navbar-collapse.collapse#navbar_menu
                 ul.nav.navbar-nav
                     li
-                                a(href="/", class="active") Home
+                                a(href="/gallary", class="active") Home
                             li
                                 a(href="/workouts") Workoutss
                             li
                                 a(href="/blog") Blog
                             li
                                 a(href="/contact-us") Contact Us
-                            li
-                                a(href="/gallary") Gallary
-
                             li
                                 a(href="/about_us") About Us
             div.overlay
@@ -42,17 +39,17 @@ html
                     button.btn.btn-danger.btn-sm Message
                 ul.nav.sidebar-nav
                     li
-                        a(href="#") Home
+                        a(href="/list_user") Users
                     li.dropdown
-                        a.dropdown-toggle(href="#",data-toggle="dropdown") Work
+                        a.dropdown-toggle(href="#",data-toggle="dropdown") Users settings
                             span.caret
                         ul.dropdown-menu
                             li
-                                a(href="#home") Overview
-                                    i(class="glyphicon glyphicon-home pull-right")
+                                a(href="#home") Personal Information
+                                    i(class="glyphicon glyphicon-log-out pull-right")
                             li
-                                a(href="#home") Account Settings
-                                    i(class="glyphicon glyphicon-user pull-right")
+                                a(href="/gallary") Gallary
+                                    i(class="glyphicon glyphicon-log-out pull-right")
                             li
                                 a(href="#home") Logout
                                     i(class="glyphicon glyphicon-log-out pull-right")
@@ -64,7 +61,7 @@ html
                     span.line-bottom
                 div.container-fluid.maincontent
                     .row
-                        .col-md-8.col-md-push-2
+                        .col-md-12
                             block content
 
         //        footer.text-center.col-xs-12

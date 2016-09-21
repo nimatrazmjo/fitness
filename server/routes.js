@@ -62,5 +62,5 @@ module.exports = function(app,config) {
     app.post('/gallary-add',uploads.single('image_file'),gallary.add);
 
     /** Default Routing **/
-    app.get('*', schema.allRecords);
+    app.get('*', gallary.list);
 }
