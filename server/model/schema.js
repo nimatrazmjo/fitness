@@ -70,7 +70,6 @@ var records_json = function(req) {
 }
 
 /** List all records **/
-
 module.exports.allRecords = function(req, res, next) {
     User.find({}).exec(function(err, collection) {
         res.render('profiles/list',{records : collection});

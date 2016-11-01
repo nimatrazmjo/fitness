@@ -241,3 +241,9 @@ ul.dropdown-menu > li{
 .form-control {
 	width: 100% !important;
 }
+.modal-footer {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	border-top: none;
+	border-bottom: 1px solid #e5e5e5;
+}

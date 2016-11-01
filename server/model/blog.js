@@ -59,8 +59,9 @@ module.exports.show= function (req, res, next) {
 	})
 }
 
-/* Anwer to post */
-
+/**
+* Answer to post question
+*/
 module.exports.post_answer = function (req, res, next) {
 	Blog.findById(req.param('question_id')).exec(function (err, collection) {
 		var comment = {};
