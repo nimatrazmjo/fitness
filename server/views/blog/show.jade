@@ -8,13 +8,11 @@ block content
                 .col-lg-12
                     h3=collection.title
                     p=collection.body
-            each comment in collection.comment
-                .row
+            .row
+                each comment in collection.comment
                     .answers
-                        .col-lg-2
-                            h6=comment.fullname
-                        .col-lg-10
                             p=comment.comment
+                            h6.userinfo=comment.fullname
             .row
                 .col-lg-12
                     .panel-title.toast-title

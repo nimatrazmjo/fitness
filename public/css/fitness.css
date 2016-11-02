@@ -162,9 +162,8 @@ input, textarea{
 }
 .answers
 {
-    padding: 20px;
-    background-color: #cccccc;
-    width: 100%;
-    height: auto;
-    position: inherit;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+    position: relative;
 }
