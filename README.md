@@ -12,7 +12,7 @@ It is designed to track your weight, body, and exercises that you do.
 <ul>
    <li> Nodejs: Download and install nodejs. Nodeschool has free node tutorials to get you started. For more informaton: <a href="https://nodejs.org/en/">click here</a>
   </li>
-  <li> MongoDB: Download and install Mongodb.Ckeckout their menual if you are just started. For more information: <a href="https://www.mongodb.com">click here</a>
+  <li> MongoDB: Download and install Mongodb.Ckeckout their manual if you are just started. For more information: <a href="https://www.mongodb.com">click here</a>
   </li>
   <li>Git: Git is a version control system. For more information :<a href="https://git-scm.com">click here</a></li>
 </ul>
