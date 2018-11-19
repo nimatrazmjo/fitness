@@ -24,4 +24,7 @@ It is designed to track your weight, body, and exercises that you do.
 <li>Make sure your mongoDB databse si running if not: mongod </li>
 <li>go to browser and type http://localhost:9000 </li>
 </ul>
+
+# Upgrade from angularjs to Angular 7
+
   
