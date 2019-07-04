@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -34,7 +35,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "rxjs": "~6.3.3",
-    "snyk": "^1.90.0",
+    "snyk": "^1.189.0",
     "stylus": "^0.54.5",
     "zone.js": "~0.8.26"
   },
