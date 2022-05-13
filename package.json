@@ -30,11 +30,11 @@
     "mongoose": "^5.2.6",
     "multer": "^1.3.1",
     "node-notifier": "^5.2.1",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "rxjs": "~6.3.3",
-    "snyk": "^1.90.0",
+    "snyk": "^1.465.0",
     "stylus": "^0.54.5",
     "zone.js": "~0.8.26"
   },
